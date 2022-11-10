@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Payments</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+      
+      #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+      }
+      
+      #myTable th, #myTable td {
+        text-align: left;
+        padding: 12px;
+      }
+      
+      #myTable tr {
+        border-bottom: 1px solid #ddd;
+      }
+      
+      #myTable tr.header, #myTable tr:hover {
+        background-color: #f1f1f1;
+      }
+      </style>
+
+</head>
+<body>
+    <div id="myNav" class="overlay">
+        <a href="Payment.html" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="/About.html">About</a>
+          <a href="/Services.html">Services</a>
+          <a href="/Payment.html">Payments</a>
+          <a href="/Contact.html">Contact</a>
+          <a href="/index.html">Home</a>
+        </div>
+      </div>
+      
+      <span style="font-size:30px;cursor:pointer"  onclick="openNav()">&#9776;</span>
+      
+      <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+      </script>
+
+<h2>My Dear customers this is low price for games, Which may you can effort to buy it.</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Game Name</th>
+    <th style="width:40%;">Price</th>
+  </tr>
+  <tr>
+    <td>Call Of Duty</td>
+    <td>$1.0</td>
+    <td><a href="./Buying.html"><input type="button" value="Buy"></a></td>
+  </tr>
+  <tr>
+    <td>Call of Duty 2</td>
+    <td>$1.99</td>
+    <td><a href="./Buying.html"><input type="button" value="Buy"></a></td>
+  </tr>
+  <tr>
+    <td>Call Of Duty World At War</td>
+    <td>$2.0</td>
+    <td><a href="./Buying.html"><input type="button" value="Buy"></a></td>
+  </tr>
+  <tr>
+    <td>Coming Soon</td>
+    <td>$0</td>
+  </tr>
+  <tr>
+    <td>Coming Soon</td>
+    <td>$0</td>
+  </tr>
+  <tr>
+    <td>Coming Soon</td>
+    <td>$0</td>
+  </tr>
+  <tr>
+    <td>Coming Soon</td>
+    <td>$0</td>
+  </tr>
+  <tr>
+    <td>Coming Soon</td>
+    <td>$0</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
